@@ -1,4 +1,3 @@
-package overwatch;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -27,7 +26,7 @@ class Machine {
             HttpsURLConnection con = (HttpsURLConnection) uc;
 
             in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
-            System.out.println(in.readLine());
+            rawStats = in.readLine();
 
         }
         catch(IOException e){

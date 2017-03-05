@@ -20,3 +20,7 @@ overwatch/out/production/overwatch/Machine.class
 overwatch/out/production/overwatch/Main.class
 
 overwatch/out/production/overwatch/overwatch.iml
+
+*.xml
+
+*.iml

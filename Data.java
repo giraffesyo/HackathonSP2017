@@ -1,7 +1,7 @@
 public class Data
 {
-	private static String basedString;
-	private static String id;
+	private String rawData;
+
 	private String avatar;
 	private String level;
 	private String win_rate;
@@ -10,9 +10,9 @@ public class Data
 	private String medals_silver;
 	private String medals_gold;
 	
-	public Data(String input)
+	 Data(String input)
 	{
-		basedString = input;
+		rawData = input;
 		avatar = extract("avatar");
 		level = extract("level");
 		win_rate = extract("win_rate")+"%";
@@ -22,53 +22,46 @@ public class Data
 		medals_gold = extract("medals_gold");
 		
 	}
-	public String extract(String input)
+	 String extract(String input)
 	{
-		int indexStart = basedString.indexOf(input);
+		int indexStart = rawData.indexOf(input);
 		int indexEnd = indexStart+(input.length());
 		int addedIndex = 3;
 		String value = "";
-		while(basedString.charAt(indexEnd+addedIndex)!=',')
+		while(rawData.charAt(indexEnd+addedIndex)!=',')
 		{
-			value +=basedString.charAt(indexEnd+addedIndex);
+			value +=rawData.charAt(indexEnd+addedIndex);
 			addedIndex++;
 		}
 		return value;
 	}
 
-	public static String getBasedString() {
-		return basedString;
-	}
 
-	public static String getId() {
-		return id;
-	}
-
-	public String getAvatar() {
+	 String getAvatar() {
 		return avatar;
 	}
 
-	public String getLevel() {
+	 String getLevel() {
 		return level;
 	}
 
-	public String getWin_rate() {
+	 String getWin_rate() {
 		return win_rate;
 	}
 
-	public String getObjective_kills_most_in_game() {
+	 String getObjective_kills_most_in_game() {
 		return objective_kills_most_in_game;
 	}
 
-	public String getMedals_bronze() {
+	 String getMedals_bronze() {
 		return medals_bronze;
 	}
 
-	public String getMedals_silver() {
+	 String getMedals_silver() {
 		return medals_silver;
 	}
 
-	public String getMedals_gold() {
+	 String getMedals_gold() {
 		return medals_gold;
 	}
 

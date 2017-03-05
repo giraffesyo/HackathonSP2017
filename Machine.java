@@ -9,13 +9,12 @@ class Machine {
 
     private String rawStats;
 
-    Machine()
-    {
+    Machine() {
         rawStats = "";
     }
 
     //updates raw stats and returns them
-    String updateStats(String userName, String userID ) {
+    String updateStats(String userName, String userID) {
         try {
             BufferedReader in;
 
@@ -27,15 +26,10 @@ class Machine {
 
             in = new BufferedReader(new InputStreamReader(uc.getInputStream()));
             rawStats = in.readLine();
+        } catch (IOException e) {
+            //Do we have internet?
         }
-		
-        catch(IOException e){
-            //check this is right
-            System.out.println("There is no such a userID. Sorry");
-			// System.out.println();
-            // e.printStackTrace();
-        }
-		
+
         return rawStats;
     }
 
@@ -43,8 +37,7 @@ class Machine {
         return rawStats;
     }
 
-    private String constructURL(String userName, String userID )
-    {
+    private String constructURL(String userName, String userID) {
         return "https://owapi.net/api/v3/u/" + userName + "-" + userID + "/stats";
     }
 

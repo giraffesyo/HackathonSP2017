@@ -1,18 +1,16 @@
 
-class Model
-{
+class Model {
     String username;
     String idNumber;
     Data data;
 
     private Machine statsGrabber;
 
-    public Model(){
+    public Model() {
         statsGrabber = new Machine();
-        }
+    }
 
-    void update (String username, String idNumber)
-    {
+    void update(String username, String idNumber) {
         this.username = username;
         this.idNumber = idNumber;
         statsGrabber.updateStats(username, idNumber);
@@ -20,8 +18,7 @@ class Model
 
     }
 
-    Data getData()
-    {
+    Data getData() {
         return data;
     }
 
